@@ -23,3 +23,7 @@ Let's create one.
 [2026-03-27 13:28] iteration #1
 Prompt: "before we start, after each prompt please do the following: 1. add the prompt + summary of the response in the end of the readme in format: [yyyy-MM-dd HH:mm] iteration #N (where the N is the increasing counter of iteration starting with 1) Prompt: "unchanged prompt text" Response summary: "short summary of what was done" 2. commit all the changes in the project directory and push"
 Response summary: "Established iteration logging convention — each prompt will be recorded in README.md with timestamp, iteration number, and response summary, followed by a commit and push."
+
+[2026-03-27 13:28] iteration #2
+Prompt: "please read the Plan.md and create a 5 step implementation plan inside IMPLEMENTATION.md"
+Response summary: "Created IMPLEMENTATION.md with a 5-step plan: project setup (LSUIElement app), menu bar icon & toggle, sleep prevention via IOKit IOPMAssertion, custom icons (outlined white / filled amber with steam), build & package."
