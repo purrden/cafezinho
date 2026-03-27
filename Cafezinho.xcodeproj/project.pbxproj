@@ -10,14 +10,12 @@
 		186AAE05467D43C781EF128C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4FACE607AC941D8801AE9A8 /* AppDelegate.swift */; };
 		910508442AA940718719ED12 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D54A431EBAC54D92A8C443A4 /* Assets.xcassets */; };
 		B1C3D4E5F6A7B8C9D0E1F2A3 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3B4C5D6E7F8A9B0C1D2E3F4 /* main.swift */; };
-		C2D3E4F5A6B7C8D9E0F1A2B3 /* Icons.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3C4D5E6F7A8B9C0D1E2F3A4 /* Icons.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		D4FACE607AC941D8801AE9A8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D54A431EBAC54D92A8C443A4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A3B4C5D6E7F8A9B0C1D2E3F4 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
-		B3C4D5E6F7A8B9C0D1E2F3A4 /* Icons.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Icons.swift; sourceTree = "<group>"; };
 		F5FEF0BADE2343D498AAA0BB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		14C26C0D0E6B4958B0A7F054 /* Cafezinho.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Cafezinho.app; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -38,7 +36,6 @@
 			children = (
 				A3B4C5D6E7F8A9B0C1D2E3F4 /* main.swift */,
 				D4FACE607AC941D8801AE9A8 /* AppDelegate.swift */,
-				B3C4D5E6F7A8B9C0D1E2F3A4 /* Icons.swift */,
 				D54A431EBAC54D92A8C443A4 /* Assets.xcassets */,
 				F5FEF0BADE2343D498AAA0BB /* Info.plist */,
 			);
@@ -132,7 +129,6 @@
 			files = (
 				186AAE05467D43C781EF128C /* AppDelegate.swift in Sources */,
 				B1C3D4E5F6A7B8C9D0E1F2A3 /* main.swift in Sources */,
-				C2D3E4F5A6B7C8D9E0F1A2B3 /* Icons.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

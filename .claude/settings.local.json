@@ -1,0 +1,15 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(git add:*)",
+      "Bash(git commit:*)",
+      "Bash(git push:*)",
+      "Bash(xcodegen --version)",
+      "Bash(xcode-select -p)",
+      "Bash(swift --version)",
+      "Bash(xcodebuild -project Cafezinho.xcodeproj -scheme Cafezinho -configuration Debug build)",
+      "Bash(xcodebuild -runFirstLaunch)",
+      "Bash(make build:*)"
+    ]
+  }
+}

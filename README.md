@@ -63,3 +63,7 @@ Response summary: "Implemented Step 4: custom drawn icons in Icons.swift. Inacti
 [2026-03-27 14:20] iteration #11
 Prompt: "let's make step 5"
 Response summary: "Created Makefile with make build (Release .app, ad-hoc signed, into build/), make install (copies to /Applications), make clean. Added .gitignore for build/ artifacts. Build confirmed: BUILD SUCCEEDED."
+
+[2026-03-27 14:24] iteration #12
+Prompt: "i kind of liked the shape of placeholder icon, let's maybe drop the steam and revert to the previous shape"
+Response summary: "Reverted icons to SF Symbols (cup.and.saucer outline inactive, cup.and.saucer.fill amber active). Removed Icons.swift entirely."
