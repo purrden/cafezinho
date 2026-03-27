@@ -55,3 +55,7 @@ Response summary: "Implemented Step 3: sleep prevention via IOKit. Added IOPMAss
 [2026-03-27 14:07] iteration #9
 Prompt: "just tested it, the settings setup is to switch off screen after 1 minute on battery. after activating no_sleep mode, the screen still got turned off after a minute of inactivity on battery"
 Response summary: "Fixed assertion type: kIOPMAssertionTypeNoDisplaySleep doesn't reliably prevent display sleep on battery. Switched to kIOPMAssertPreventUserIdleDisplaySleep, which is what caffeinate -d uses and correctly prevents idle display sleep on both AC and battery."
+
+[2026-03-27 14:10] iteration #10
+Prompt: "looks like it works. very well, let's move to step 4"
+Response summary: "Implemented Step 4: custom drawn icons in Icons.swift. Inactive: outlined cup (NSBezierPath trapezoid + D-handle, isTemplate=true for light/dark adaptation). Active: filled amber cup + D-handle + 3 S-curve steam squiggles. AppDelegate.updateIcon() now uses Icons.active()/inactive()."
