@@ -51,3 +51,7 @@ Response summary: "applicationDidFinishLaunching was never called because @main 
 [2026-03-27 14:02] iteration #8
 Prompt: "it worked, fantastic, the toggle is working as expected. let's move to the next step"
 Response summary: "Implemented Step 3: sleep prevention via IOKit. Added IOPMAssertionCreateWithName(kIOPMAssertionTypeNoDisplaySleep) on activate, IOPMAssertionRelease on deactivate. Removed debug print statements. Build succeeded."
+
+[2026-03-27 14:07] iteration #9
+Prompt: "just tested it, the settings setup is to switch off screen after 1 minute on battery. after activating no_sleep mode, the screen still got turned off after a minute of inactivity on battery"
+Response summary: "Fixed assertion type: kIOPMAssertionTypeNoDisplaySleep doesn't reliably prevent display sleep on battery. Switched to kIOPMAssertPreventUserIdleDisplaySleep, which is what caffeinate -d uses and correctly prevents idle display sleep on both AC and battery."
