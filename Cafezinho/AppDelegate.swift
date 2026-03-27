@@ -7,7 +7,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     private var isActive = false
 
     func applicationDidFinishLaunching(_ notification: Notification) {
-        statusItem = NSStatusBar.system.statusItem(withLength: NSStatusItem.squareLength)
+        statusItem = NSStatusBar.system.statusItem(withLength: NSStatusItem.variableLength)
 
         if let button = statusItem?.button {
             button.action = #selector(toggleSleep)
@@ -15,6 +15,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         }
 
         updateIcon()
+        print("Cafezinho launched, statusItem: \(String(describing: statusItem))")
     }
 
     @objc private func toggleSleep() {
@@ -24,7 +25,10 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     }
 
     private func updateIcon() {
-        guard let button = statusItem?.button else { return }
+        guard let button = statusItem?.button else {
+            print("No status item button")
+            return
+        }
 
         let symbolName = isActive ? "cup.and.saucer.fill" : "cup.and.saucer"
 
@@ -34,9 +38,16 @@ class AppDelegate: NSObject, NSApplicationDelegate {
             config = config.applying(NSImage.SymbolConfiguration(paletteColors: [amber]))
         }
 
-        let image = NSImage(systemSymbolName: symbolName, accessibilityDescription: nil)?
-            .withSymbolConfiguration(config)
-        image?.isTemplate = !isActive
-        button.image = image
+        if let image = NSImage(systemSymbolName: symbolName, accessibilityDescription: nil)?
+            .withSymbolConfiguration(config) {
+            image.isTemplate = !isActive
+            button.image = image
+            button.title = ""
+            print("Icon set: \(symbolName)")
+        } else {
+            button.image = nil
+            button.title = isActive ? "●" : "○"
+            print("SF Symbol nil, falling back to title")
+        }
     }
 }

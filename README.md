@@ -39,3 +39,7 @@ Response summary: "Implemented toggle state machine in AppDelegate: isActive boo
 [2026-03-27 13:47] iteration #5
 Prompt: "when launching app from xcode I cannot see any icon of the app in the menu bar"
 Response summary: "Fixed two bugs: (1) tinted() used .sourceAtop on a blank image so nothing rendered; (2) SF Symbols need SymbolConfiguration to size correctly in the menu bar. Rewrote updateIcon() using NSImage.SymbolConfiguration(paletteColors:) for amber tint."
+
+[2026-03-27 13:52] iteration #6
+Prompt: "still nothing"
+Response summary: "Added diagnostic print statements and title fallback (○/●) in case SF Symbol loading fails. Switched to variableLength status item. If the title shows but not the image, the issue is SF Symbol loading; if nothing shows, status item creation itself is broken."
