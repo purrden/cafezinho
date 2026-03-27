@@ -11,3 +11,7 @@ My partner who is editing a documentary about Lebanon just returned to their wor
 I could have just recommended one of the pieces of software that exists out in the wild, but ...
 well, I have some spare times on my hands and a bunch of engineer friends who are LLM-deniers.
 Let's see what we can do about it.
+
+#### Plan
+Any endeavour starts with a Plan.
+Let's create one.
