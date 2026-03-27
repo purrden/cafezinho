@@ -59,3 +59,7 @@ Response summary: "Fixed assertion type: kIOPMAssertionTypeNoDisplaySleep doesn'
 [2026-03-27 14:10] iteration #10
 Prompt: "looks like it works. very well, let's move to step 4"
 Response summary: "Implemented Step 4: custom drawn icons in Icons.swift. Inactive: outlined cup (NSBezierPath trapezoid + D-handle, isTemplate=true for light/dark adaptation). Active: filled amber cup + D-handle + 3 S-curve steam squiggles. AppDelegate.updateIcon() now uses Icons.active()/inactive()."
+
+[2026-03-27 14:20] iteration #11
+Prompt: "let's make step 5"
+Response summary: "Created Makefile with make build (Release .app, ad-hoc signed, into build/), make install (copies to /Applications), make clean. Added .gitignore for build/ artifacts. Build confirmed: BUILD SUCCEEDED."
