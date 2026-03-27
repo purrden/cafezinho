@@ -18,6 +18,35 @@ Let's create one.
 
 ---
 
+## Build Summary
+
+| | |
+|---|---|
+| **Inspiration** | 27 Mar 2026, 12:59 |
+| **First prompt** | 27 Mar 2026, 13:28 |
+| **Shipped** | 27 Mar 2026, 14:24 |
+| **Time to ship** | ~56 minutes of active prompting |
+| **Prompts** | 13 (including this one) |
+| **Bugs hit** | 3 (entry point, icon rendering, wrong IOPMAssertion type) |
+| **Lines of code written** | ~120 (AppDelegate.swift, main.swift, Makefile) |
+| **Lines of code touched by Den** | 0 |
+
+### Token & cost estimate
+
+Token counts aren't directly accessible from inside a Claude Code session, so these are estimates based on session complexity (file reads, code generation, multi-step debugging):
+
+| | Tokens | Cost (USD) |
+|---|---|---|
+| Input | ~120,000 | ~$0.36 |
+| Output | ~25,000 | ~$0.38 |
+| **Total** | **~145,000** | **~$0.74** |
+
+At today's GBP/USD rate (~0.79): **≈ £0.58**
+
+For context: a flat white in London costs about £4.50. This app cost roughly one eighth of a coffee to build.
+
+---
+
 ## Iteration Log
 
 [2026-03-27 13:28] iteration #1
@@ -67,3 +96,7 @@ Response summary: "Created Makefile with make build (Release .app, ad-hoc signed
 [2026-03-27 14:24] iteration #12
 Prompt: "i kind of liked the shape of placeholder icon, let's maybe drop the steam and revert to the previous shape"
 Response summary: "Reverted icons to SF Symbols (cup.and.saucer outline inactive, cup.and.saucer.fill amber active). Removed Icons.swift entirely."
+
+[2026-03-27 14:28] iteration #13
+Prompt: "fantastic, let's wrap up and add some summary of how long it took us to build the app, and how many tokens (and their GBP representation estimate) were spent on the project, put this summary before the iterations summaries"
+Response summary: "Added Build Summary section before the iteration log: timeline (12:59 inspiration → 14:24 shipped, 56 min active), prompt count, bugs hit, lines of code, and token/cost estimate (~145k tokens, ~$0.74 / ~£0.58 — about 1/8th of a London flat white)."
