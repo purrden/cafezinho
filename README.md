@@ -31,3 +31,7 @@ Response summary: "Created IMPLEMENTATION.md with a 5-step plan: project setup (
 [2026-03-27 13:37] iteration #3
 Prompt: "let's proceed with step 1"
 Response summary: "Created the Xcode project from scratch: project.pbxproj, Info.plist (LSUIElement=YES, no Dock icon), AppDelegate.swift (@main, NSStatusItem with ☕ placeholder), Assets.xcassets. Build confirmed: BUILD SUCCEEDED."
+
+[2026-03-27 13:43] iteration #4
+Prompt: "let's proceed to step 2"
+Response summary: "Implemented toggle state machine in AppDelegate: isActive bool, updateIcon() swapping SF Symbol cup.and.saucer (template/white) ↔ cup.and.saucer.fill (amber tint) on each click. Build succeeded."
