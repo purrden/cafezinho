@@ -43,3 +43,7 @@ Response summary: "Fixed two bugs: (1) tinted() used .sourceAtop on a blank imag
 [2026-03-27 13:52] iteration #6
 Prompt: "still nothing"
 Response summary: "Added diagnostic print statements and title fallback (○/●) in case SF Symbol loading fails. Switched to variableLength status item. If the title shows but not the image, the issue is SF Symbol loading; if nothing shows, status item creation itself is broken."
+
+[2026-03-27 13:57] iteration #7
+Prompt: "nothing is printed in console even"
+Response summary: "applicationDidFinishLaunching was never called because @main on NSApplicationDelegate doesn't auto-wire the delegate. Switched to explicit main.swift entry point (NSApplication.shared + delegate + app.run()), removed @main from AppDelegate, added main.swift to project.pbxproj."
