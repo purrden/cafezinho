@@ -26,28 +26,17 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     private func updateIcon() {
         guard let button = statusItem?.button else { return }
 
-        if isActive {
-            let image = NSImage(systemSymbolName: "cup.and.saucer.fill", accessibilityDescription: "Cafezinho active")
-            image?.isTemplate = false
-            button.image = tinted(image, color: NSColor(red: 1.0, green: 0.75, blue: 0.1, alpha: 1.0))
-        } else {
-            let image = NSImage(systemSymbolName: "cup.and.saucer", accessibilityDescription: "Cafezinho inactive")
-            image?.isTemplate = true
-            button.image = image
-        }
-    }
+        let symbolName = isActive ? "cup.and.saucer.fill" : "cup.and.saucer"
 
-    private func tinted(_ source: NSImage?, color: NSColor) -> NSImage? {
-        guard let source else { return nil }
-        let size = source.size
-        let tinted = NSImage(size: size)
-        tinted.lockFocus()
-        color.set()
-        source.draw(in: NSRect(origin: .zero, size: size),
-                    from: NSRect(origin: .zero, size: size),
-                    operation: .sourceAtop,
-                    fraction: 1.0)
-        tinted.unlockFocus()
-        return tinted
+        var config = NSImage.SymbolConfiguration(scale: .medium)
+        if isActive {
+            let amber = NSColor(red: 1.0, green: 0.75, blue: 0.1, alpha: 1.0)
+            config = config.applying(NSImage.SymbolConfiguration(paletteColors: [amber]))
+        }
+
+        let image = NSImage(systemSymbolName: symbolName, accessibilityDescription: nil)?
+            .withSymbolConfiguration(config)
+        image?.isTemplate = !isActive
+        button.image = image
     }
 }

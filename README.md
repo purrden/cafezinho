@@ -35,3 +35,7 @@ Response summary: "Created the Xcode project from scratch: project.pbxproj, Info
 [2026-03-27 13:43] iteration #4
 Prompt: "let's proceed to step 2"
 Response summary: "Implemented toggle state machine in AppDelegate: isActive bool, updateIcon() swapping SF Symbol cup.and.saucer (template/white) ↔ cup.and.saucer.fill (amber tint) on each click. Build succeeded."
+
+[2026-03-27 13:47] iteration #5
+Prompt: "when launching app from xcode I cannot see any icon of the app in the menu bar"
+Response summary: "Fixed two bugs: (1) tinted() used .sourceAtop on a blank image so nothing rendered; (2) SF Symbols need SymbolConfiguration to size correctly in the menu bar. Rewrote updateIcon() using NSImage.SymbolConfiguration(paletteColors:) for amber tint."
