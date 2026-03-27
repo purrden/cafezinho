@@ -1,9 +1,11 @@
 import Cocoa
+import IOKit.pwr_mgt
 
 class AppDelegate: NSObject, NSApplicationDelegate {
 
     private var statusItem: NSStatusItem?
     private var isActive = false
+    private var assertionID: IOPMAssertionID = 0
 
     func applicationDidFinishLaunching(_ notification: Notification) {
         statusItem = NSStatusBar.system.statusItem(withLength: NSStatusItem.variableLength)
@@ -14,20 +16,33 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         }
 
         updateIcon()
-        print("Cafezinho launched, statusItem: \(String(describing: statusItem))")
     }
 
     @objc private func toggleSleep() {
-        isActive.toggle()
+        isActive ? deactivate() : activate()
+    }
+
+    private func activate() {
+        let result = IOPMAssertionCreateWithName(
+            kIOPMAssertionTypeNoDisplaySleep as CFString,
+            IOPMAssertionLevel(kIOPMAssertionLevelOn),
+            "Cafezinho" as CFString,
+            &assertionID
+        )
+        guard result == kIOReturnSuccess else { return }
+        isActive = true
         updateIcon()
-        // Sleep prevention wired up in Step 3
+    }
+
+    private func deactivate() {
+        IOPMAssertionRelease(assertionID)
+        assertionID = 0
+        isActive = false
+        updateIcon()
     }
 
     private func updateIcon() {
-        guard let button = statusItem?.button else {
-            print("No status item button")
-            return
-        }
+        guard let button = statusItem?.button else { return }
 
         let symbolName = isActive ? "cup.and.saucer.fill" : "cup.and.saucer"
 
@@ -42,11 +57,9 @@ class AppDelegate: NSObject, NSApplicationDelegate {
             image.isTemplate = !isActive
             button.image = image
             button.title = ""
-            print("Icon set: \(symbolName)")
         } else {
             button.image = nil
             button.title = isActive ? "●" : "○"
-            print("SF Symbol nil, falling back to title")
         }
     }
 }

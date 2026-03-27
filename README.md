@@ -47,3 +47,7 @@ Response summary: "Added diagnostic print statements and title fallback (○/●
 [2026-03-27 13:57] iteration #7
 Prompt: "nothing is printed in console even"
 Response summary: "applicationDidFinishLaunching was never called because @main on NSApplicationDelegate doesn't auto-wire the delegate. Switched to explicit main.swift entry point (NSApplication.shared + delegate + app.run()), removed @main from AppDelegate, added main.swift to project.pbxproj."
+
+[2026-03-27 14:02] iteration #8
+Prompt: "it worked, fantastic, the toggle is working as expected. let's move to the next step"
+Response summary: "Implemented Step 3: sleep prevention via IOKit. Added IOPMAssertionCreateWithName(kIOPMAssertionTypeNoDisplaySleep) on activate, IOPMAssertionRelease on deactivate. Removed debug print statements. Build succeeded."
